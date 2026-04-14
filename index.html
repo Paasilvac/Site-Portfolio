@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+     <title>DevPa - Portifólio</title>
+</head>
+<body>
+   
+        <nav class="navegacao">
+            <ul class="menu">
+                <li>
+                    <a href="#Início" class="menu-link">Início</a>
+                </li>
+                <li>
+                    <a href="#sobre" class="menu-link">Sobre</a>
+                </li>
+                <li>
+                    <a href="#projetos" class="menu-link">Projetos</a>
+                </li>
+                <li>
+                    <a href="#contatos" class="menu-link">Contato</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main id="Início" class="cabecalho">
+            <div>
+                <img src="./img/Paloma.png" alt="Paloma Carvalho" class="foto-perfil">
+                <h1>Paloma Carvalho</h1>
+                <p class="cabecalho-sub-titulo">Desenvolvedora Front-end</p>
+            </div>
+        </main>
+
+        <section id="sobre" class="sobre">
+            <h2 class="sobre-titulo">Sobre Mim</h2>
+            <div class="sobre-caixa">
+                <p class="sobre-paragrafo">
+                    Olá, meu nome é Paloma Carvalho! Sou uma desenvolvedora Front-end, apaixonada por tecnologia e em criar experiências.
+                </p>
+             </div>
+        </section>
+
+        <section id="projetos" class="projetos">
+            <h2>Meus Projetos</h2>
+            <div class="projetos-caixa">
+
+                <div class="projetos-card">
+                    <img src="./img/projeto1.png" alt="Projeto 1" class="projetos-imagem">
+                    <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Loja Virtual - Produtos Personalizados</h3>
+                    <p class="paragrafo-projetos">Descrição do projeto 1.</p>
+                </div>
+                </div>
+
+                <div class="projetos-card">
+                    <img src="./img/projeto2.png" alt="Projeto 2" class="projetos-imagem">
+                    <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Aplicativo de Tarefas</h3>
+                    <p class="paragrafo-projetos">Descrição do projeto 2.</p>
+                </div>
+                </div>
+
+                <div class="projetos-card">
+                    <img src="./img/projeto3.png" alt="Projeto 3" class="projetos-imagem">
+                    <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Sistema de Gerenciamento</h3>
+                    <p class="paragrafo-projetos">Descrição do projeto 3.</p>
+                </div>
+                </div>
+        </section>
+
+        <section id="contatos" class="contatos">
+            <h2 class="contatos-titulo">Entre em Contato</h2>
+
+            <form class="contatos-formulario" id="formulario" onsubmit="enviarWhats(event)">
+                <div class="grupo-form">
+                    <input placeholder="Nome" class="campo-form" id="Nome">
+                    </div>
+
+                    <div class="grupo-form">
+                        <textarea class="campo-form" placeholder="Digite sua mensagem" rows="6" id="Mensagem"></textarea>
+                    </div>
+                    <button type="submit" class="botao-form">Enviar Whatsapp</button>
+                </form>
+
+            </section>
+
+
+            <script>
+
+
+/**
+ * Envia uma mensagem para o whatsapp com o nome e mensagem
+ * 
+ * @param {Event} event - Evento do formulário
+ */
+                function enviarWhats(event) {
+                    event.preventDefault();
+
+                    const nome = document.getElementById('Nome').value;
+                    const mensagem = document.getElementById('Mensagem').value;
+                    const telefone = '5511988872916'
+
+                    if (!nome || !mensagem) {
+                        alert('Por favor, preencha todos os campos!');
+                        return;
+                    }
+
+                    const texto = `Olá, meu nome é ${nome}, ${mensagem}`;
+                    const msgFormatada = encodeURIComponent(texto);
+
+                    const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+            
+
+                    window.open(url, '_blank');
+                }
+            </script>
+
+</body>
+</html>
