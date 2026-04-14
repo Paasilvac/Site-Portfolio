@@ -71,27 +71,27 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 80vh;
     text-align: center;
     background: linear-gradient(135deg, var(--primarya), var(--secubdaria));
 }
 
 
 .foto-perfil {
-    width: 280px;
-    height: 280px;
-    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
-    border-radius: 50%;
-    border: 4px solid var(--vidro);
-    margin-bottom: 1rem;
-    animation: flutuar 5s ease-in-out infinite;
+    width: 260px;
+    height: 240px;
+    box-shadow: 0 15px 20px rgba(166, 163, 228, 0.3);
+    border-radius: 100%;
+    border: 10px solid var(--vidro);
+    margin-bottom: 0rem;
+    animation: flutuar 10s ease-in-out infinite;
 }
 
 h1 {
     font-size: 3.5rem;
     color: var(--claro);
     font-weight: bold;
-    margin: 20px;
+    margin: 30px;
 
 }
 
@@ -128,25 +128,31 @@ h1 {
 }
 
 .projetos {
-    padding: 8rem 2rem;
+    padding: 6rem 3rem;
 
 }
 
 .projetos-caixa{
     display: grid;    
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
     max-width: 1200px;
-    margin: 30px auto;
+    margin: 40px auto;
 
 }
 
+a {
+    color: #ffffff;
+    line-height: 2rem;
+}
+
+
 .projetos-card {
     background: var(--vidro);
-    border-radius: 16px;
-    border: 5px solid var(--vidro);
-    backdrop-filter: blur(10px);
-    padding: 1rem;
+    border-radius: 20px;
+    border: 7px solid var(--maisEscuro);
+    backdrop-filter: blur (10px);
+    padding: 10px;
     overflow: hidden;
     transition: all 0.5s ease;
     cursor:pointer
@@ -154,26 +160,26 @@ h1 {
 
 .projetos-titulo{
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
+    margin-bottom: 150px;
 
 }
 
 .projetos-card:hover{
-    box-shadow: 0 10 20px rgba(79, 70, 229, 0.2);
+    box-shadow: 10px 5px 20px rgba(217, 213, 227, 0.817);
     transform: translatey(-10px) scale(1.10);
 
 }
 
 .projetos-imagem{
-    height: 200px;
     width: 100%;
-    object-fit: cover;
-
+    height: 200px;
+    display: block;
+    border-radius: 10px;
 }
 
 .caixa-textos-projetos{
-    padding: 1.5rem;
+    padding: 0.2rem;
 }
 
 .paragrafo-projetos{
@@ -182,7 +188,7 @@ h1 {
 }
 
 .info-projetos{
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .contatos {
@@ -191,8 +197,8 @@ h1 {
 }
 
 .contatos-titulo {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
 }
 
 .contatos-formulario {
