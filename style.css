@@ -295,13 +295,14 @@ a {
     background: rgba(240, 240, 240, 0.842);
     border-radius: 8px;
     color: black;
-    border: 1px solid var(--maisEscuro);
+    border: 5px solid #94a3b8;
     outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
     
 }
 
 .campo-form:focus {
-    border-color: var(--maisEscuro);
+    border-color: var(--claro);
     box-shadow: 0 0 5px rgba(69, 42, 131, 0.726);
 
 }
