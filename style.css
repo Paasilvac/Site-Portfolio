@@ -11,13 +11,13 @@ html{
 }
 
 :root{
-    --primaria: #19082c;
-    --secundaria: #0b0970;
-    --escuro: #392f53;
-    --maisEscuro: #818bb8;
-    --claro: #f8f9fa;
-    --vidro: rgba(78, 62, 114, 0.692);
-
+    --primaria: #0f2438;
+    --secundaria: #1a3a52;
+    --escuro: #1e293b;
+    --maisEscuro: #475569;
+    --claro: #f1f5f9;
+    --vidro: rgba(30, 41, 59, 0.7);
+    --accent: #3b82f6;
 }
 
 body{
@@ -102,29 +102,107 @@ h1 {
 }
 
 .sobre {
-    padding: 12rem 2rem;
-    text-align: center;
+    padding: 6rem 2rem;
 }
 
 .sobre-titulo {
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--claro);
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
 }
-.sobre-caixa {
-    padding: 3rem;
-    max-width: 600px;
-    margin: 10px auto;
+
+.sobre-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sobre-esquerda {
+    padding: 1rem;
     border-radius: 20px;
-    border:15px solid var(--vidro);
-    backdrop-filter: blur(50px);
     background: var(--vidro);
+    backdrop-filter: blur(50px);
+    border: 8px solid var;
+    height: fit-content;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.sobre-esquerda:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+    border-color: var(--claro);
 }
 
 .sobre-paragrafo {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--claro);
+}
+
+.sobre-direita {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.habilidades-titulo {
+    font-size: 1.8rem;
+    color: var(--claro);
+    margin-bottom: 2rem;
     text-align: center;
-    font-size: 1.2rem;   
+}
+
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.habilidade-card {
+    background: var(--vidro);
+    border: 6px solid var(--maisEscuro);
+    border-radius: 10px;
+    padding: 0.6rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.habilidade-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(166, 163, 228, 0.4);
+    border-color: var(--claro);
+}
+
+.habilidade-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.habilidade-card h4 {
+    font-size: 0.9rem;
+    color: var(--claro);
+    margin-bottom: 0.2rem;
+}
+
+.habilidade-card p {
+    font-size: 0.8rem;
+    color: var(--claro);
+}
+
+@media (max-width: 768px) {
+    .sobre-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .habilidades-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .projetos {
