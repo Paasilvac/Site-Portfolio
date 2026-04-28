@@ -7,6 +7,7 @@
      <title>DevPa - Portfólio</title>
 </head>
 <body>
+    <div class="cursor-trail" aria-hidden="true"></div>
    
         <nav class="navegacao">
             <ul class="menu">
@@ -164,6 +165,45 @@
 
                     window.open(url, '_blank');
                 }
+
+                const cursorTrail = document.querySelector('.cursor-trail');
+                let trailX = window.innerWidth / 2;
+                let trailY = window.innerHeight / 2;
+                let mouseX = trailX;
+                let mouseY = trailY;
+
+                window.addEventListener('mousemove', (event) => {
+                    mouseX = event.clientX;
+                    mouseY = event.clientY;
+                });
+
+                function animateTrail() {
+                    trailX += (mouseX - trailX) * 0.14;
+                    trailY += (mouseY - trailY) * 0.14;
+
+                    if (cursorTrail) {
+                        cursorTrail.style.transform = `translate(${trailX}px, ${trailY}px)`;
+                    }
+
+                    requestAnimationFrame(animateTrail);
+                }
+
+                animateTrail();
+
+                const menuLinks = document.querySelectorAll('.menu-link');
+
+                menuLinks.forEach((link) => {
+                    link.addEventListener('mousemove', (event) => {
+                        const rect = link.getBoundingClientRect();
+                        const x = ((event.clientX - rect.left) / rect.width - 0.5) * 10;
+                        const y = ((event.clientY - rect.top) / rect.height - 0.5) * 10;
+                        link.style.transform = `translate(${x * 0.35}px, ${y * 0.2}px)`;
+                    });
+
+                    link.addEventListener('mouseleave', () => {
+                        link.style.transform = 'translate(0, 0)';
+                    });
+                });
             </script>
 
 </body>
